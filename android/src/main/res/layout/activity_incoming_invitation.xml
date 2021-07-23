@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ContentDescription"
+    tools:context=".IncomingInvitationActivity">
+    <data >
+        <variable
+            name="callerName"
+            type="String" />
+        <variable
+            name="meetingType"
+            type="String"
+            />
+    </data>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/call_background"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/background_blur">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/incoming_caller_avatar"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.CornerSize25Percent"
+                android:padding="5dp"
+                app:strokeWidth="5dp"
+                app:strokeColor="#3ABFF8"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_avatar_default"
+                app:layout_constraintBottom_toTopOf="@+id/guideline8"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/incoming_caller_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:text="@{callerName}"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_large_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/incoming_caller_avatar" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/incoming_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="9dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="@string/incoming_message"
+                android:textSize="@dimen/text_small_size"
+                android:drawablePadding="4dp"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/incoming_caller_name" />
+
+            <ImageView
+                android:id="@+id/incoming_caller_reject"
+                android:layout_width="@dimen/round_button_radius"
+                android:layout_height="@dimen/round_button_radius"
+                android:layout_marginHorizontal="25dp"
+                android:background="@drawable/button_circular"
+                android:backgroundTint="@color/accent_red"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="15dp"
+                android:rotation="135.0"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_baseline_local_phone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/guideline3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guideline2"
+                app:tint="@color/accent_white" />
+
+
+            <ImageView
+                android:id="@+id/incoming_caller_accept"
+                android:layout_width="@dimen/round_button_radius"
+                android:layout_height="@dimen/round_button_radius"
+                android:layout_marginHorizontal="25dp"
+                android:background="@drawable/button_circular"
+                android:backgroundTint="@color/accent_green"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="15dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_baseline_local_phone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guideline3"
+                app:layout_constraintTop_toTopOf="@+id/guideline2"
+                app:tint="@color/accent_white" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="479dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.50" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.5" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </RelativeLayout>
+</layout>

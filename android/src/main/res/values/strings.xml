@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="incoming_message">Incoming MightyID %1$s meeting</string>
+</resources>
